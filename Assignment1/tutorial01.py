@@ -63,3 +63,16 @@ def printGP(a, r, n):
     else:
         gp.append(0)
     return gp
+
+
+# function for AP
+def printAP(a, d, n):
+    ap = []
+    x = 0
+    if type(a) != type("c") and type(d) != type("c") and type(n) == type(1):
+        while(x < n):
+            ap.append(round(a+x*d, 3))
+            x += 1
+    else:
+        ap.append(0)
+    return ap
