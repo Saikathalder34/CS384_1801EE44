@@ -35,3 +35,18 @@ def divide(num1, num2):
     else:
         return 0
     return division
+
+
+# function for power
+def power(num1, num2):
+    x = 1
+    power = 1
+    if type(num1) != type("c") and type(num2) == type(1):
+        while x <= abs(num2):
+            power *= num1
+            x += 1
+    else:
+        return 0
+    if num2 <= 0:
+        return 1/power
+    return power
