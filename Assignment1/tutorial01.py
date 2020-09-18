@@ -76,3 +76,19 @@ def printAP(a, d, n):
     else:
         ap.append(0)
     return ap
+
+
+# function for HP
+def printHP(a, d, n):
+    hp = []
+    x = 0
+    if a and type(a) != type("c") and type(d) != type("c") and type(n) == type(1):
+        while(x < n):
+            if a+x*d:
+                hp.append(round(1/(a+x*d), 3))
+            else:
+                hp.append(0)
+            x += 1
+    else:
+        hp.append(0)
+    return hp
