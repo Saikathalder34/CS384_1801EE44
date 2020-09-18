@@ -50,3 +50,16 @@ def power(num1, num2):
     if num2 <= 0:
         return 1/power
     return power
+
+
+# function for GP
+def printGP(a, r, n):
+    gp = []
+    x = 0
+    if type(a) != type("c") and type(r) != type("c") and type(n) == type(1):
+        while(x < n):
+            gp.append(round(a*power(r, x), 3))
+            x += 1
+    else:
+        gp.append(0)
+    return gp
