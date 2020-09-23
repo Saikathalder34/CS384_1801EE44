@@ -128,6 +128,7 @@ def variance(first_list):
         else:
             list_dummy.append((x-m)*(x-m))
     variance_value = summation(list_dummy)/len(first_list)
+    variance_value = round(variance_value, 3)
     return variance_value
 
 
@@ -142,3 +143,14 @@ def median(first_list):
         median_value = sorted_list[(n-1)/2]
 
     return median_value
+
+
+# Function to compute Standard deviation. You cant use Python functions
+def standard_deviation(first_list):
+    standard_deviation_value = math.sqrt(variance(first_list))
+    standard_deviation_value = round(standard_deviation_value, 3)
+    return standard_deviation_value
+
+
+list1 = [1, 2, 3, 4]
+print(standard_deviation(list1))
