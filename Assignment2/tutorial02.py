@@ -1,4 +1,8 @@
+import math
+
 # Function to compute sum. You cant use Python functions
+
+
 def summation(first_list):
     summation_value = 0
     for x in first_list:
@@ -48,3 +52,12 @@ def mae(first_list, second_list):
     mae_value = round(mae_value, 3)
 
     return mae_value
+
+
+# Function to compute RMSE. You cant use Python functions
+def rmse(first_list, second_list):
+    if mse(first_list, second_list) > 0:
+        rmse_value = math.sqrt(mse(first_list, second_list))
+    else:
+        return 0
+    return rmse_value
