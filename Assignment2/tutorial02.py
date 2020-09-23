@@ -101,3 +101,19 @@ def pcc(first_list, second_list):
     pcc_value = summation(list1)/math.sqrt(summation(list2)*summation(list3))
     pcc_value = round(pcc_value, 3)
     return pcc_value
+
+
+def sorting(first_list):
+    n = len(first_list)
+
+    for x in first_list:
+        if type(x) == type("s"):
+            return 0
+        else:
+            for i in range(n-1):
+                for j in range(0, n-i-1):
+                    if first_list[j] > first_list[j+1]:
+                        first_list[j], first_list[j +
+                                                  1] = first_list[j+1], first_list[j]
+    sorted_list = first_list
+    return sorted_list
