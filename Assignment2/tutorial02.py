@@ -78,6 +78,7 @@ def nse(first_list, second_list):
     else:
         nse_value = 1-(mse(first_list, second_list) /
                        mse(first_list, list_dummy))
+    nse_value = round(nse_value, 2)
     return nse_value
 
 
@@ -150,3 +151,25 @@ def standard_deviation(first_list):
     standard_deviation_value = math.sqrt(variance(first_list))
     standard_deviation_value = round(standard_deviation_value, 3)
     return standard_deviation_value
+
+
+# Function to compute Skewness. You cant use Python functions
+def skewness(first_list):
+    list_dummy = []
+    for x in first_list:
+        if type(x) == type("s"):
+            return 0
+        else:
+            m = mean(first_list)
+            var = variance(first_list)
+            sk = (x-m)/var
+            list_dummy.append(sk*sk*sk)
+
+    skewness_value = summation(list_dummy)/len(first_list)
+    skewness_value = round(skewness_value, 3)
+
+    return skewness_value
+
+
+list1 = [1, 26,  4]
+print(skewness(list1))
