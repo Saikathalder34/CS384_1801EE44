@@ -171,5 +171,17 @@ def skewness(first_list):
     return skewness_value
 
 
-list1 = [1, 26,  4]
-print(skewness(list1))
+# Function to compute Kurtosis. You cant use Python functions
+def kurtosis(first_list):
+    list_dummy = []
+    for x in first_list:
+        if type(x) == type("s"):
+            return 0
+        else:
+            m = mean(first_list)
+            var = variance(first_list)
+            kr = (x-m)/var
+            list_dummy.append(kr*kr*kr*kr)
+    kurtosis_value = summation(list_dummy)/len(first_list)
+    kurtosis_value = round(kurtosis_value, 2)
+    return kurtosis_value
