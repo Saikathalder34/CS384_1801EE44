@@ -26,9 +26,25 @@ def mse(first_list, second_list):
                 return 0
             else:
                 list_dummy.append(x*x-y*y)
-
     else:
         return 0
     mse_value = summation(list_dummy)/len(list_dummy)
     mse_value = round(mse_value, 3)
     return mse_value
+
+
+# Function to compute mae. You cant use Python functions
+def mae(first_list, second_list):
+    list_dummy = []
+    if len(first_list) == len(second_list):
+        for x, y in zip(first_list, second_list):
+            if type(x) == type("s") or type(y) == type("s"):
+                return 0
+            else:
+                list_dummy.append(abs(x-y))
+    else:
+        return 0
+    mae_value = summation(list_dummy)/len(list_dummy)
+    mae_value = round(mae_value, 3)
+
+    return mae_value
