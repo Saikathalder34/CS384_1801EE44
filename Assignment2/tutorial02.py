@@ -129,3 +129,16 @@ def variance(first_list):
             list_dummy.append((x-m)*(x-m))
     variance_value = summation(list_dummy)/len(first_list)
     return variance_value
+
+
+# Function to compute median. You cant use Python functions
+def median(first_list):
+    n = len(first_list)
+    sorted_list = sorting(first_list)
+
+    if n % 2 == 0:
+        median_value = (sorted_list[int(n/2)]+sorted_list[int(n/2)-1])/2
+    else:
+        median_value = sorted_list[(n-1)/2]
+
+    return median_value
