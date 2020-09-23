@@ -117,3 +117,19 @@ def sorting(first_list):
                                                   1] = first_list[j+1], first_list[j]
     sorted_list = first_list
     return sorted_list
+
+
+def variance(first_list):
+    list_dummy = []
+    m = mean(first_list)
+    for x in first_list:
+        if type(x) == type("s"):
+            return 0
+        else:
+            list_dummy.append((x-m)*(x-m))
+    variance_value = summation(list_dummy)/len(first_list)
+    return variance_value
+
+
+list1 = [1, 2, 3, 4]
+print(variance(list1))
