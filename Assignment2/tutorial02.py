@@ -60,6 +60,7 @@ def rmse(first_list, second_list):
         rmse_value = math.sqrt(mse(first_list, second_list))
     else:
         return 0
+    rmse_value = round(rmse_value, 3)
     return rmse_value
 
 
@@ -141,7 +142,9 @@ def median(first_list):
     if n % 2 == 0:
         median_value = (sorted_list[int(n/2)]+sorted_list[int(n/2)-1])/2
     else:
-        median_value = sorted_list[int(n-1)/2]
+        median_value = sorted_list[int((n-1)/2)]
+
+    median_value = round(median_value, 3)
 
     return median_value
 
