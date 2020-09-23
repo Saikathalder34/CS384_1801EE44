@@ -79,3 +79,25 @@ def nse(first_list, second_list):
         nse_value = 1-(mse(first_list, second_list) /
                        mse(first_list, list_dummy))
     return nse_value
+
+
+# Function to compute Pearson correlation coefficient. You cant use Python functions
+def pcc(first_list, second_list):
+    list1 = []
+    list2 = []
+    list3 = []
+    if len(first_list) == len(second_list):
+        for x, y in zip(first_list, second_list):
+            m = mean(first_list)
+            n = mean(second_list)
+            if type(x) == type("s") or type(y) == type("s"):
+                return 0
+            else:
+                list1.append((x-m)*(y-n))
+                list2.append((x-m)*(x-m))
+                list3.append((y-n)*(y-n))
+    else:
+        return 0
+    pcc_value = summation(list1)/math.sqrt(summation(list2)*summation(list3))
+    pcc_value = round(pcc_value, 3)
+    return pcc_value
