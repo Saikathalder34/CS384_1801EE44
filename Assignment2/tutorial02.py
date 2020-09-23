@@ -8,3 +8,10 @@ def summation(first_list):
             summation_value += x
             summation_value = round(summation_value, 3)
     return summation_value
+
+
+# Function to compute mean
+def mean(first_list):
+    mean_value = summation(first_list)/len(first_list)
+    mean_value = round(mean_value, 3)
+    return mean_value
