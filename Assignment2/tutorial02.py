@@ -129,7 +129,3 @@ def variance(first_list):
             list_dummy.append((x-m)*(x-m))
     variance_value = summation(list_dummy)/len(first_list)
     return variance_value
-
-
-list1 = [1, 2, 3, 4]
-print(variance(list1))
