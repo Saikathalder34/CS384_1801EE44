@@ -29,7 +29,7 @@ def mse(first_list, second_list):
             if type(x) == type("s") or type(y) == type("s"):
                 return 0
             else:
-                list_dummy.append(x*x-y*y)
+                list_dummy.append((x-y)*(x-y))
     else:
         return 0
     mse_value = summation(list_dummy)/len(list_dummy)
@@ -61,3 +61,21 @@ def rmse(first_list, second_list):
     else:
         return 0
     return rmse_value
+
+
+# Function to compute NSE. You cant use Python functions
+def nse(first_list, second_list):
+    list_dummy = []
+    m = mean(first_list)
+    for x, y in zip(first_list, second_list):
+        if type(x) == type("s") or type(y) == type("s"):
+            return 0
+        else:
+            list_dummy.append(m)
+
+    if mse(first_list, list_dummy) == 0:
+        return 0
+    else:
+        nse_value = 1-(mse(first_list, second_list) /
+                       mse(first_list, list_dummy))
+    return nse_value
