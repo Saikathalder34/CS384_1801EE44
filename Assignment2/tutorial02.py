@@ -150,7 +150,3 @@ def standard_deviation(first_list):
     standard_deviation_value = math.sqrt(variance(first_list))
     standard_deviation_value = round(standard_deviation_value, 3)
     return standard_deviation_value
-
-
-list1 = [1, 2, 3, 4]
-print(standard_deviation(list1))
