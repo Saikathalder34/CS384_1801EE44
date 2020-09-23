@@ -141,7 +141,7 @@ def median(first_list):
     if n % 2 == 0:
         median_value = (sorted_list[int(n/2)]+sorted_list[int(n/2)-1])/2
     else:
-        median_value = sorted_list[(n-1)/2]
+        median_value = sorted_list[int(n-1)/2]
 
     return median_value
 
