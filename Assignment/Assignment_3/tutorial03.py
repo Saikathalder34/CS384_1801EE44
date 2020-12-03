@@ -1,7 +1,8 @@
 import os
 import re
 import csv
-path = r"E:\cmder\CS384_1801EE21\Assignment3\studentinfo_cs384.csv"
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+path = os.path.join(os.getcwd(), 'studentinfo_cs384.csv')
 
 
 def del_create_analytics_folder():
@@ -13,7 +14,7 @@ def del_create_analytics_folder():
 def country():
     try:
         os.mkdir(
-            r"C:\Users\saikat\Desktop\CS384_2020_skeleton\Assignment\Assignment 3 csv Processing\analytics\country")
+            r"C:\Users\saikat\Desktop\CS384_1801EE44\Assignment\Assignment_3\analytics\country")
     except:
         pass
     with open("studentinfo_cs384.csv", 'r') as file:
@@ -36,7 +37,7 @@ def course():
 def email_domain_extract():
     try:
         os.mkdir(
-            r"C:\Users\saikat\Desktop\CS384_2020_skeleton\Assignment\Assignment 3 csv Processing\analytics\email_domain")
+            r"C:\Users\saikat\Desktop\CS384_1801EE44\Assignment\Assignment_3\analytics\email_domain")
     except:
         pass
     with open("studentinfo_cs384.csv", 'r') as file:
@@ -56,7 +57,7 @@ def email_domain_extract():
 def gender():
     try:
         os.mkdir(
-            r"C:\Users\saikat\Desktop\CS384_2020_skeleton\Assignment\Assignment 3 csv Processing\analytics\gender")
+            r"C:\Users\saikat\Desktop\CS384_1801EE44\Assignment\Assignment_3\analytics\gender")
     except:
         pass
     with open("studentinfo_cs384.csv", 'r') as file:
@@ -80,7 +81,7 @@ def dob():
 def state():
     try:
         os.mkdir(
-            r"C:\Users\saikat\Desktop\CS384_2020_skeleton\Assignment\Assignment 3 csv Processing\analytics\state")
+            r"C:\Users\saikat\Desktop\CS384_1801EE44\Assignment\Assignment_3\analytics\state")
     except:
         pass
     with open("studentinfo_cs384.csv", 'r') as file:
@@ -99,7 +100,7 @@ def state():
 def blood_group():
     try:
         os.mkdir(
-            r"C:\Users\saikat\Desktop\CS384_2020_skeleton\Assignment\Assignment 3 csv Processing\analytics\blood_group")
+            r"C:\Users\saikat\Desktop\CS384_1801EE44\Assignment\Assignment_3\analytics\blood_group")
     except:
         pass
     with open("studentinfo_cs384.csv", 'r') as file:
