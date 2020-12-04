@@ -1,0 +1,13 @@
+ques_no,question,option1,option2,option3,option4,correct_option,marks_correct_ans,marks_wrong_ans,compulsory,marked_choice,Total,Legend
+1,World’s highest railway bridge will be constructed on which river  ?,Ganga,Chenab,Yamuna,Kaveri,2,5,-1,n,3,1,Wrong Choice
+2,Which is the coldest of all the planets?,Jupiter,Uranus,Neptune,Pluto,3,4,-1,n,3,2,Correct Choice
+3,Which is the largest Mountain range?,Arravali,Andes,Great Dividing Range,Cascade,2,8,-2,n,2,2,Correct Choice
+4,When is the longest day observed?,December 22,June 21,August 25,September 22,2,5,-1,n,0,0,Unattempted
+5,Which is the World's highest bridge standing 1850 ft above a gorge opens?,Sidu Bridge,Millau Via-duct,Beipanjiang Bridge,Puli Bridge,3,5,-1,n,0,0,Unattempted
+6,The construction of world’s largest optical telescope has started in which country?,China,Russia,Chile,India,3,5,-2,n,2,1,Wrong Choice
+7,Largest of all the Islands?,Comoros,Greenland,Maskali,Andamaan and Nicobar,2,5,-1,n,3,1,Wrong Choice
+8,Which is the largest of all the Deserts?,Thar,Sahara,Kalahari,Arabian,2,5,-2,n,0,0,Unattempted
+9,What is the largest of all the Airports?,King Abdul Khalid International Airport,Veer Savarkar International Airport,Cochin International Airport,None,1,8,-2,n,2,1,Wrong Choice
+10,When is the shortest day observed?,June 21,December 22,June 22,December 21,2,8,-2,n,2,2,Correct Choice
+,,,,,,,,,,,14,Marks Obtained
+,,,,,,,,,,,58,Total Quiz Marks

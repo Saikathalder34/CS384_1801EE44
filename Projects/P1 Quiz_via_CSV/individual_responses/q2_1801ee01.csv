@@ -1,0 +1,13 @@
+ques_no,question,option1,option2,option3,option4,correct_option,marks_correct_ans,marks_wrong_ans,compulsory,marked_choice,Total,Legend
+1,The first news paper in the world was started by?,Japan,China,USA,India,2,5,-1,n,2,2,Correct Choice
+2,Who is known as Man of Blood and Iron?,Napoleon,Bismarck,Ho Chi Minh,Sir Walter Scott,2,4,-1,n,3,1,Wrong Choice
+3,Which is considered as oldest civilization of the world?,Mesopotamian Civilization,Harappan Civilization,Chinese Civilization,Egyptain Civilization,2,8,-2,n,2,2,Correct Choice
+4,"Which among following is called ""Gift of the Nile""?",China,India,Iraq,Egypt,4,5,-1,n,2,1,Wrong Choice
+5,The oldest dynasty still ruling in which country?,India,Iran,Japan,England,3,5,-1,n,2,1,Wrong Choice
+6,Which political party used to have swastik symbol?,Communist Party of China,Republican Party USA ,National Socialist Party Germany,Liberal Democratic Party of Japan,3,5,-2,n,3,2,Correct Choice
+7,When did the first Railway Train begin to carry passengers and freight?,1814 AD,1830 AD,1853 AD,1784 AD,2,5,-1,n,2,2,Correct Choice
+9,What was the name of the atom bomb dropped by USA on Hiroshima in Japan during the second world war ?,Little Boy,Little Fly,Little Devil,None of these,1,5,-2,n,0,0,Unattempted
+10,Which country has always remained free from foreign rule?,Phillipines,Nepal,USA,Laos,2,8,-2,n,0,0,Unattempted
+11,Russian revolutionary who founded the Communist Party was,Karl Marx,Stalin,Lenin,Trotsky,3,8,-2,n,3,2,Correct Choice
+,,,,,,,,,,,28,Marks Obtained
+,,,,,,,,,,,58,Total Quiz Marks
