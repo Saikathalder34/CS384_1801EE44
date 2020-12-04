@@ -143,8 +143,7 @@ class Notepad:
 
         self.thisScrollBar.pack(side=RIGHT, fill=Y)
         ######TOOLBAR LABEL###############
-        # tool_bar = tkinter.Label(self.root)
-        # tool_bar.pack()
+
         # Scrollbar will adjust automatically according to the content
         self.thisScrollBar.config(command=self.thisTextArea.yview)
         self.thisTextArea.config(yscrollcommand=self.thisScrollBar.set)
@@ -243,7 +242,6 @@ class Notepad:
         self.thisTextArea.event_generate("<<Paste>>")
 
     def run(self):
-
         # Run main application
         self.root.mainloop()
 ##################################################
@@ -261,7 +259,6 @@ class Notepad:
         word = len(content.split())
         totalword_time = tkinter.Label(totalword_frame, text=word)
         totalword_time.pack()
-        # tkinter.messagebox.showinfo("word count", word)
 
     def totalcharacter(self):
         totalchar_popup = Toplevel()
@@ -275,7 +272,6 @@ class Notepad:
         character = len(content.replace(" ", ""))-1
         totalchar_time = tkinter.Label(totalchar_frame, text=character)
         totalchar_time.pack()
-        # showinfo("character count", character)
 
     def createdTime(self):
         ct_popup = Toplevel()
@@ -286,7 +282,7 @@ class Notepad:
         ct_frame.pack(pady=20)
         # text_find = tkinter.Label(find_frame, text=)
         if self.file == None:
-            t = time.ctime(os.path.getmtime("p1_main.py"))
+            t = time.ctime(os.path.getmtime("p2_main.py"))
             # showinfo("Created", datetime.datetime.fromtimestamp(t))
             ct_time = tkinter.Label(ct_frame, text=t)
             ct_time.pack()
@@ -362,7 +358,6 @@ class Notepad:
         replace_btn.grid(row=2, column=1, padx=8, pady=4)
 
     def bold(self):
-        # bold_btn=tkinter.Button(l,)
         text_get = font.Font(font=self.thisTextArea["font"])
         font_now = text_get.actual()['family']
         font_size_now = text_get.actual()['size']
