@@ -17,7 +17,7 @@ class Notepad:
     # default window width and height
     thisWidth = 300
     thisHeight = 300
-    thisTextArea = Text(root)  # mane je ta likha hochhe
+    thisTextArea = Text(root)
     thisMenuBar = Menu(root)
     thisFileMenu = Menu(thisMenuBar, tearoff=0)
     thisEditMenu = Menu(thisMenuBar, tearoff=0)
@@ -55,10 +55,10 @@ class Notepad:
         screenWidth = self.root.winfo_screenwidth()
         screenHeight = self.root.winfo_screenheight()
 
-        # For left-alling
+        # For left-align
         left = (screenWidth / 2) - (self.thisWidth / 2)
 
-        # For right-allign
+        # For right-align
         top = (screenHeight / 2) - (self.thisHeight / 2)
 
         # For top and bottom
@@ -85,7 +85,7 @@ class Notepad:
         self.thisFileMenu.add_command(label="Save",
                                       command=self.saveFile)
 
-        ##############################
+        # To save as current file
         self.thisFileMenu.add_command(label="Save as",
                                       command=self.saveASFile)
 
@@ -113,20 +113,24 @@ class Notepad:
         self.thisMenuBar.add_cascade(label="Edit",
                                      menu=self.thisEditMenu)
 
-        #######stats###########################
+        # word count inside stats
         self.thisStatsMenu.add_command(label="Word Count",
                                        command=self.totalword)
+        # character count
         self.thisStatsMenu.add_command(label="Character Count",
                                        command=self.totalcharacter)
+        # created time
         self.thisStatsMenu.add_command(label="Created time",
                                        command=self.createdTime)
+        # modified time
         self.thisStatsMenu.add_command(label="Modified time",
                                        command=self.modifiedTime)
         self.thisMenuBar.add_cascade(label="Stats",
                                      menu=self.thisStatsMenu)
-        ################FORMAT##########################
+        # Bold button
         self.thisFormatMenu.add_command(label="Bold",
                                         command=self.bold)
+        # Font / size change
         self.thisFormatMenu.add_command(label="Font/Size",
                                         command=self.font)
         self.thisMenuBar.add_cascade(label="Format",
@@ -142,20 +146,18 @@ class Notepad:
         self.root.config(menu=self.thisMenuBar)
 
         self.thisScrollBar.pack(side=RIGHT, fill=Y)
-        ######TOOLBAR LABEL###############
 
         # Scrollbar will adjust automatically according to the content
         self.thisScrollBar.config(command=self.thisTextArea.yview)
         self.thisTextArea.config(yscrollcommand=self.thisScrollBar.set)
 
+    ########### DIFINATION OF ALL THE FUNCTION ########
     def quitApplication(self):
         self.root.destroy()
         # exit()
 
     def showAbout(self):
         showinfo("FEATURE ADDED BY", "SAIKAT AND KARTIK")
-
-    # defination of each function###################
 
     def openFile(self):
 
@@ -165,12 +167,12 @@ class Notepad:
 
         if self.file == "":
 
-            # no file to open
+            # NO FILE TO OPEN
             self.file = None
         else:
 
-            # Try to open the file
-            # set the window title
+            # TRY TO OPEN THE FILE
+            # SIDE THE WINDOW TITLE
             self.root.title(os.path.basename(self.file) + " - Notepad")
             self.thisTextArea.delete(1.0, END)
 
@@ -188,7 +190,7 @@ class Notepad:
     def saveFile(self):
 
         if self.file == None:
-            # Save as new file
+            # SAVE AS NEW FILE
             self.file = asksaveasfilename(initialfile='Untitled.txt',
                                           defaultextension=".txt",
                                           filetypes=[("All Files", "*.*"),
@@ -198,12 +200,12 @@ class Notepad:
                 self.file = None
             else:
 
-                # Try to save the file
+                # TRY TO SAVE THE FILE
                 file = open(self.file, "w")
                 file.write(self.thisTextArea.get(1.0, END))
                 file.close()
 
-                # Change the window title
+                # CHANGE THE WINDOW TITLE
                 self.root.title(os.path.basename(self.file) + " - Notepad")
 
         else:
@@ -217,6 +219,7 @@ class Notepad:
                                           defaultextension=".txt",
                                           filetypes=[("All Files", "*.*"),
                                                      ("Text Documents", "*.txt")])
+            # CHANGE THE WINDOW TITLE
             self.root.title(os.path.basename(self.file) + " - Notepad")
 
             file = open(self.file, "w")
@@ -227,6 +230,7 @@ class Notepad:
                                           defaultextension=".txt",
                                           filetypes=[("All Files", "*.*"),
                                                      ("Text Documents", "*.txt")])
+            # CHANGE THE WINDOW TITLE
             self.root.title(os.path.basename(self.file) + " - Notepad")
             file = open(self.file, "w")
             file.write(self.thisTextArea.get(1.0, END))
@@ -244,9 +248,9 @@ class Notepad:
     def run(self):
         # Run main application
         self.root.mainloop()
-##################################################
 
     def totalword(self):
+        # POPUP
         totalword_popup = Toplevel()
         totalword_popup.geometry("200x100")
         totalword_popup.title("Word Count")
@@ -261,6 +265,7 @@ class Notepad:
         totalword_time.pack()
 
     def totalcharacter(self):
+        # POPUP
         totalchar_popup = Toplevel()
         totalchar_popup.geometry("200x100")
         totalchar_popup.title("Character Count")
@@ -274,16 +279,15 @@ class Notepad:
         totalchar_time.pack()
 
     def createdTime(self):
+        # POPUP
         ct_popup = Toplevel()
         ct_popup.geometry("200x100")
         ct_popup.title("Created Time")
         ct_popup.resizable(0, 0)
         ct_frame = tkinter.LabelFrame(ct_popup, text="CREATED TIME")
         ct_frame.pack(pady=20)
-        # text_find = tkinter.Label(find_frame, text=)
         if self.file == None:
             t = time.ctime(os.path.getmtime("p2_main.py"))
-            # showinfo("Created", datetime.datetime.fromtimestamp(t))
             ct_time = tkinter.Label(ct_frame, text=t)
             ct_time.pack()
         else:
@@ -338,7 +342,7 @@ class Notepad:
         find_popup.geometry("450x300")
         find_popup.title("Find or Replace")
         find_popup.resizable(0, 0)
-        ###
+        ##
         find_frame = tkinter.LabelFrame(find_popup, text="Find and replace")
         find_frame.pack(pady=20)
         text_find = tkinter.Label(find_frame, text='Find')
@@ -419,18 +423,7 @@ class Notepad:
 
         font_box.bind("<<ComboboxSelected>>", change_font)
         size_box.bind("<<ComboboxSelected>>", size_change)
-        # status_bars = Label(notepad, text='status bars')
-        # status_bars.pack(side=Tk.BOTTOM)
-        # text_change = False
-        # def change_word(self):
-        #     global text_change
-        #     if self.__thisTextArea.edit_modified():
-        #         text_change = True
-        #         content = self.__thisTextArea.get(1.0, END)
-        #         word = len(content.split())
-        #         status_bars.config(text=f"CHAR:{word}")
-        #     self.__thisTextArea.edit_modified(False)
-        # self.__thisTextArea.bind("<<<Modified>>>", change_word)
+
 
         # Run main application
 notepad = Notepad(width=600, height=400)
