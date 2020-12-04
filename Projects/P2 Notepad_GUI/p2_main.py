@@ -394,16 +394,28 @@ class Notepad:
 
         font_now = "Arial"
         font_size_now = 16
+        text_get = font.Font(font=self.thisTextArea["font"])
+        fn = text_get.actual()['family']
+        sn = text_get.actual()['size']
 
         def change_font(font_popup):
             global font_now
+            global sn
+            global text_get
+            text_get = font.Font(font=self.thisTextArea["font"])
+            sn = text_get.actual()['size']
             font_now = font_fmaily.get()
-            self.thisTextArea.configure(font=(font_now, font_size_now))
+
+            self.thisTextArea.configure(font=(font_now, sn))
 
         def size_change(font_popup):
             global font_size_now
+            global fn
+            global text_get
+            text_get = font.Font(font=self.thisTextArea["font"])
+            fn = text_get.actual()['family']
             font_size_now = size_variable.get()
-            self.thisTextArea.configure(font=(font_now, font_size_now))
+            self.thisTextArea.configure(font=(fn, font_size_now))
 
         font_box.bind("<<ComboboxSelected>>", change_font)
         size_box.bind("<<ComboboxSelected>>", size_change)
@@ -419,7 +431,6 @@ class Notepad:
         #         status_bars.config(text=f"CHAR:{word}")
         #     self.__thisTextArea.edit_modified(False)
         # self.__thisTextArea.bind("<<<Modified>>>", change_word)
-
 
         # Run main application
 notepad = Notepad(width=600, height=400)
