@@ -9,6 +9,8 @@ import os.path
 import datetime
 import time
 
+# os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
 
 class Notepad:
 
@@ -303,7 +305,7 @@ class Notepad:
         mdf_frame = tkinter.LabelFrame(mdf_popup, text="MODIFIED TIME")
         mdf_frame.pack(pady=20)
         if self.file == None:
-            t = time.ctime(os.path.getmtime("p1_main.py"))
+            t = time.ctime(os.path.getmtime("p2_main.py"))
             mdf_time = tkinter.Label(mdf_frame, text=t)
             mdf_time.pack()
         else:
@@ -423,7 +425,6 @@ class Notepad:
 
         font_box.bind("<<ComboboxSelected>>", change_font)
         size_box.bind("<<ComboboxSelected>>", size_change)
-
 
         # Run main application
 notepad = Notepad(width=600, height=400)
